@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GrowthMatrix | Performance Marketing, SEO Semántico y Unit Economics</title>
+  <meta name="description" content="Portal especializado en marketing digital basado en datos. Optimización de Meta Ads, Google Ads, arquitectura SEO semántica, cálculo de ROAS, CAC y LTV.">
+  <meta name="keywords" content="marketing digital, performance marketing, meta ads, google ads, seo semantico, calculadora roas, cac y ltv, funnels de venta">
+  <link rel="canonical" href="https://growthmatrix.pro/">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%234f46e5'/><text y='72' x='50' text-anchor='middle' font-family='sans-serif' font-weight='900' font-size='55' fill='%23f472b6'>Δ</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "GrowthMatrix",
+    "url": "https://growthmatrix.pro/",
+    "description": "Metodologías avanzadas de adquisición digital, atribución y optimización de costes publicitarios.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "GrowthMatrix Media",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://growthmatrix.pro/favicon.ico"
+      }
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header-growth">
+    <div class="navbar">
+      <div class="logo-area">
+        <div class="logo-icon">&Delta;</div>
+        <a href="index.html" class="brand-text">Growth<span>Matrix</span></a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Abrir navegación">&equiv;</button>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Inicio</a></li>
+          <li><a href="#articulos">Artículos & Playbooks</a></li>
+          <li><a href="herramientas/index.html" class="btn-cta-nav">Calculadora ROAS & LTV</a></li>
+          <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-growth">
+    <div class="container">
+      <div class="hero-pill-badge">
+        <span>&bull; Adquisición Basada en Rentabilidad Real &bull;</span>
+      </div>
+      <h1>Escala tus Canales Digitales con <span class="gradient-text">Unit Economics Sólidos</span></h1>
+      <p>
+        Deja de quemar presupuesto en tráfico frío. Aprende a auditar tus campañas de Meta y Google Ads, dominar la arquitectura de contenido SEO y rentabilizar cada dólar invertido con ratios LTV:CAC superiores a 3:1.
+      </p>
+      <div class="hero-actions">
+        <a href="herramientas/index.html" class="btn-growth-primary">Calcular ROAS y Unit Economics &rarr;</a>
+        <a href="#articulos" class="btn-growth-secondary">Ver Guías Estratégicas</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- AdSense Top Banner -->
+  <div class="container">
+    <div id="ad-top-growth" data-ad-slot="HEADER_BANNER" class="ad-slot-saas"></div>
+  </div>
+
+  <!-- Calculadora Integrada en Inicio -->
+  <main class="container">
+    <section class="calc-saas-card">
+      <div class="calc-saas-header">
+        <span class="card-pill-tag">Simulador de Rendimiento Publicitario</span>
+        <h3>Calculadora Rápida de ROAS y Retorno de Inversión</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">
+          Descubre si tu inversión publicitaria está generando beneficio neto real o si estás en pérdidas encubiertas por no computar el margen bruto de tu producto.
+        </p>
+      </div>
+
+      <form id="growth-calc-form" class="calc-inputs-grid">
+        <div class="form-group-saas">
+          <label for="calc-spend">Inversión en Publicidad ($USD):</label>
+          <input type="number" id="calc-spend" value="3000" min="10" step="100">
+        </div>
+        <div class="form-group-saas">
+          <label for="calc-revenue">Facturación Bruta Atribuida ($USD):</label>
+          <input type="number" id="calc-revenue" value="12000" min="10" step="100">
+        </div>
+        <div class="form-group-saas">
+          <label for="calc-customers">Clientes Nuevos Captados:</label>
+          <input type="number" id="calc-customers" value="150" min="1" step="1">
+        </div>
+        <div class="form-group-saas">
+          <label for="calc-margin">Margen Bruto de Producto (%):</label>
+          <input type="number" id="calc-margin" value="55" min="5" max="95" step="1">
+        </div>
+        <div class="form-group-saas">
+          <label for="calc-aov">Ticket Medio de Compra / AOV ($):</label>
+          <input type="number" id="calc-aov" value="80" min="5" step="5">
+        </div>
+        <div class="form-group-saas">
+          <label for="calc-repeats">Compras Promedio por Cliente (Vida útil):</label>
+          <input type="number" id="calc-repeats" value="2.2" min="1" max="20" step="0.1">
+        </div>
+      </form>
+
+      <div class="results-metrics-grid">
+        <div class="metric-pill-card">
+          <div class="m-label">ROAS Atribuido</div>
+          <div id="res-roas" class="m-value">4.00x</div>
+        </div>
+        <div class="metric-pill-card">
+          <div class="m-label">ROAS Mínimo (Break-Even)</div>
+          <div id="res-be-roas" class="m-value" style="color: #64748b;">1.82x</div>
+        </div>
+        <div class="metric-pill-card">
+          <div class="m-label">ROI Neto Publicitario</div>
+          <div id="res-roi" class="m-value success">+120.0%</div>
+        </div>
+        <div class="metric-pill-card">
+          <div class="m-label">Coste Adquisición (CAC)</div>
+          <div id="res-cac" class="m-value" style="color: #0f172a;">$20.00</div>
+        </div>
+        <div class="metric-pill-card">
+          <div class="m-label">Margen por Cliente (LTV)</div>
+          <div id="res-ltv" class="m-value success">$96.80</div>
+        </div>
+        <div class="metric-pill-card">
+          <div class="m-label">Ratio LTV : CAC</div>
+          <div id="res-ratio" class="m-value">4.84 : 1</div>
+        </div>
+      </div>
+
+      <div id="res-diagnosis" class="metric-diagnosis-box">
+        <strong style="color: #10b981;">&check; Salud Financiera Excelente (LTV:CAC &gt; 3:1):</strong> Tienes margen suficiente para escalar agresivamente el presupuesto en Meta Ads y Google Ads sin comprometer el flujo de caja.
+      </div>
+      
+      <div style="text-align: right; margin-top: 1.2rem;">
+        <a href="herramientas/index.html" style="font-weight: 600; font-size: 0.9rem;">Ver calculadora completa de embudos y descarte de leads &rarr;</a>
+      </div>
+    </section>
+
+    <!-- Artículos y Playbooks -->
+    <section id="articulos">
+      <div class="section-header">
+        <h2>Playbooks y Estrategias de Adquisición</h2>
+        <p>Documentación técnica elaborada por directores de performance y analistas de crecimiento digital.</p>
+      </div>
+
+      <div class="grid-growth">
+        <!-- Artículo 1 -->
+        <article class="card-growth">
+          <div>
+            <span class="card-pill-tag">Paid Media & Ads</span>
+            <h3><a href="articulos/como-optimizar-campanas-meta-ads-google-ads-roas.html">Optimización de Meta Ads y Google Ads: Estructura CBO, Fatiga Creativa y Atribución</a></h3>
+            <p>
+              Aprende a estructurar presupuestos Advantage+, testeo dinámico de creatividades con ganchos de 3 segundos y resolución del desfase de atribución tras iOS 14.5.
+            </p>
+          </div>
+          <div class="card-footer">
+            <span>Lectura: 10 min</span>
+            <span>Por: Sofía Bernal</span>
+          </div>
+        </article>
+
+        <!-- Artículo 2 -->
+        <article class="card-growth">
+          <div>
+            <span class="card-pill-tag">SEO & Contenido</span>
+            <h3><a href="articulos/arquitectura-seo-semantico-estrategia-contenidos.html">Arquitectura SEO Semántico: Topic Clusters y Dominio de Intención de Búsqueda</a></h3>
+            <p>
+              Cómo organizar tu web en pilares temáticos interconectados para ganar autoridad en los motores de búsqueda y captar tráfico cualificado de alta intención transaccional.
+            </p>
+          </div>
+          <div class="card-footer">
+            <span>Lectura: 12 min</span>
+            <span>Por: David Navarrete</span>
+          </div>
+        </article>
+
+        <!-- Artículo 3 -->
+        <article class="card-growth">
+          <div>
+            <span class="card-pill-tag">Automatización & CRM</span>
+            <h3><a href="articulos/embudos-de-conversion-funnels-email-marketing.html">Embudos de Conversión y Email Marketing: De Tráfico Frío a Clientes Recurrentes</a></h3>
+            <p>
+              Diseño de flujos automatizados de nutrición de leads (Lead Nurturing), secuencias de carrito abandonado de alta conversión y segmentación por comportamiento de compra.
+            </p>
+          </div>
+          <div class="card-footer">
+            <span>Lectura: 11 min</span>
+            <span>Por: Sofía Bernal</span>
+          </div>
+        </article>
+
+        <!-- Artículo 4 -->
+        <article class="card-growth">
+          <div>
+            <span class="card-pill-tag">Finanzas de Growth</span>
+            <h3><a href="articulos/como-calcular-cac-y-ltv-en-adquisicion-digital.html">Guía Maestra de Unit Economics: Cómo Calcular, Auditar y Escalar el Ratio LTV:CAC</a></h3>
+            <p>
+              El cálculo contable riguroso del Coste de Adquisición de Clientes. Diferenciación entre CAC blended vs. CAC pagado y cómo calcular el periodo de recuperación (CAC Payback Period).
+            </p>
+          </div>
+          <div class="card-footer">
+            <span>Lectura: 13 min</span>
+            <span>Por: Andrés Morales</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- AdSense Mid Banner -->
+    <div id="ad-mid-growth" data-ad-slot="ARTICLE_INLINE" class="ad-slot-saas"></div>
+
+    <!-- Preguntas Frecuentes -->
+    <section class="faq-wrap-saas">
+      <div class="section-header">
+        <h2>Preguntas Frecuentes sobre Performance Marketing</h2>
+      </div>
+
+      <div class="faq-item-saas">
+        <div class="faq-q-saas">
+          <span>¿Cuál es la diferencia real entre ROAS y ROI en publicidad digital?</span>
+          <span>+</span>
+        </div>
+        <div class="faq-a-saas">
+          El ROAS (Return on Ad Spend) mide únicamente los ingresos brutos generados por cada dólar gastado en anuncios (Ingresos &divide; Inversión publicitaria). El ROI (Return on Investment) deduce el coste de los bienes vendidos (COGS), gastos de envío, procesadores de pago y la inversión en anuncios, mostrando el beneficio neto real. Un ROAS de 3x puede ser deficitario si tu margen bruto es menor al 33%.
+        </div>
+      </div>
+
+      <div class="faq-item-saas">
+        <div class="faq-q-saas">
+          <span>¿Qué es un ratio LTV:CAC óptimo para un eCommerce o SaaS?</span>
+          <span>+</span>
+        </div>
+        <div class="faq-a-saas">
+          El estándar de oro en la industria del software y comercio electrónico es 3:1. Un ratio inferior a 1.5:1 indica que la empresa quema capital en adquisición. Un ratio superior a 5:1 suele indicar que la empresa invierte poco en marketing y está perdiendo cuota de mercado frente a competidores más agresivos.
+        </div>
+      </div>
+
+      <div class="faq-item-saas">
+        <div class="faq-q-saas">
+          <span>¿Por qué el SEO semántico es superior al enfoque tradicional de palabras clave exactas?</span>
+          <span>+</span>
+        </div>
+        <div class="faq-a-saas">
+          Los motores de búsqueda modernos procesan lenguaje natural mediante vectores semánticos. En lugar de repetir una palabra clave concreta, valoran la cobertura holística del tema (Topic Authority) y la satisfacción precisa de la intención de búsqueda del usuario mediante respuestas estructuradas y datos enriquecidos.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer-growth">
+    <div class="footer-growth-grid">
+      <div class="footer-growth-col">
+        <h4>GrowthMatrix Media</h4>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">
+          Publicación digital especializada en estrategias de crecimiento, analítica de atribución y finanzas para negocios digitales.
+        </p>
+      </div>
+      <div class="footer-growth-col">
+        <h4>Herramientas</h4>
+        <ul>
+          <li><a href="herramientas/index.html">Calculadora de ROAS & ROI</a></li>
+          <li><a href="herramientas/index.html">Simulador de Embudo Funnel</a></li>
+          <li><a href="herramientas/index.html">Calculadora Ratio LTV:CAC</a></li>
+        </ul>
+      </div>
+      <div class="footer-growth-col">
+        <h4>Playbooks Clave</h4>
+        <ul>
+          <li><a href="articulos/como-optimizar-campanas-meta-ads-google-ads-roas.html">Optimización de Meta & Google Ads</a></li>
+          <li><a href="articulos/arquitectura-seo-semantico-estrategia-contenidos.html">SEO Semántico & Clusters</a></li>
+          <li><a href="articulos/embudos-de-conversion-funnels-email-marketing.html">Embudos de Email Marketing</a></li>
+          <li><a href="articulos/como-calcular-cac-y-ltv-en-adquisicion-digital.html">Unit Economics y CAC</a></li>
+        </ul>
+      </div>
+      <div class="footer-growth-col">
+        <h4>Legal & Privacidad</h4>
+        <ul>
+          <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="politica-de-privacidad.html">Política de Privacidad</a></li>
+          <li><a href="politica-de-cookies.html">Política de Cookies</a></li>
+          <li><a href="terminos-y-condiciones.html">Términos de Servicio</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-growth-bottom">
+      &copy; 2026 GrowthMatrix Media. Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <!-- Cookie Banner RGPD -->
+  <div id="cookie-banner" class="cookie-banner-growth">
+    <div class="cookie-box-growth">
+      <div class="cookie-text-growth">
+        En GrowthMatrix utilizamos cookies propias y de terceros (Google AdSense) para analizar el tráfico del portal y ofrecer publicidad relevante adaptada a la temática de marketing digital. Puedes consultar nuestra <a href="politica-de-cookies.html">política de cookies</a>.
+      </div>
+      <div style="display: flex; gap: 0.8rem;">
+        <button id="cookie-reject" class="btn-growth-secondary" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Solo Necesarias</button>
+        <button id="cookie-accept" class="btn-growth-primary" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Aceptar Cookies</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/ads-config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

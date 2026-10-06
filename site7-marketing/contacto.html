@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | GrowthMatrix Media</title>
+  <meta name="description" content="Ponte en contacto con el equipo de GrowthMatrix para consultas editoriales, colaboraciones técnicas o dudas sobre nuestras herramientas de performance.">
+  <link rel="canonical" href="https://growthmatrix.pro/contacto.html">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="header-growth">
+    <div class="navbar">
+      <div class="logo-area">
+        <div class="logo-icon">&Delta;</div>
+        <a href="index.html" class="brand-text">Growth<span>Matrix</span></a>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="herramientas/index.html" class="btn-cta-nav">Calculadoras</a></li>
+          <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+          <li><a href="contacto.html" class="active">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="article-header-growth">
+      <span class="card-pill-tag">Canal de Comunicación</span>
+      <h1>Ponte en Contacto con Nosotros</h1>
+      <p style="color: var(--text-muted); font-size: 1.15rem;">
+        ¿Tienes una propuesta editorial, una duda técnica sobre nuestras calculadoras o deseas proponer un caso de estudio?
+      </p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; margin-top: 2rem;">
+      <div class="calc-saas-card">
+        <h3 style="margin-bottom: 1.2rem;">Envíanos un Mensaje Directo</h3>
+        <form onsubmit="event.preventDefault(); alert('Gracias por tu mensaje. El equipo editorial de GrowthMatrix se pondrá en contacto en un plazo de 24-48 horas laborables.'); this.reset();">
+          <div class="form-group-saas" style="margin-bottom: 1rem;">
+            <label for="contact-name">Nombre y Apellidos:</label>
+            <input type="text" id="contact-name" required placeholder="Ej. Natalia Gómez">
+          </div>
+          <div class="form-group-saas" style="margin-bottom: 1rem;">
+            <label for="contact-email">Correo Electrónico:</label>
+            <input type="email" id="contact-email" required placeholder="natalia@empresa.com">
+          </div>
+          <div class="form-group-saas" style="margin-bottom: 1rem;">
+            <label for="contact-subject">Tipo de Consulta:</label>
+            <select id="contact-subject">
+              <option value="herramientas">Duda sobre la calculadora de ROAS/LTV</option>
+              <option value="editorial">Sugerencia de playbook o artículo</option>
+              <option value="prensa">Entrevista o mención en prensa</option>
+              <option value="legal">Privacidad y protección de datos</option>
+            </select>
+          </div>
+          <div class="form-group-saas" style="margin-bottom: 1.5rem;">
+            <label for="contact-message">Tu Consulta o Propuesta:</label>
+            <textarea id="contact-message" rows="5" required style="background: var(--bg-main); border: 1px solid var(--border); border-radius: 8px; padding: 0.8rem; font-family: var(--font-sans); outline: none;"></textarea>
+          </div>
+          <button type="submit" class="btn-growth-primary" style="width: 100%; justify-content: center;">Enviar Formulario &rarr;</button>
+        </form>
+      </div>
+
+      <div>
+        <div class="callout-growth">
+          <div class="callout-growth-title">Información de Contacto Corporativo</div>
+          <p style="color: var(--text-dark); margin-bottom: 0.8rem;">
+            <strong>Entidad:</strong> GrowthMatrix Media Digital SL<br>
+            <strong>Dirección:</strong> Calle Serrano 43, 28001 Madrid, España<br>
+            <strong>Email General:</strong> redaccion@growthmatrix.pro<br>
+            <strong>Horario:</strong> Lunes a Viernes, de 09:00 a 18:00 (CET)
+          </p>
+          <p style="font-size: 0.85rem; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 0.8rem;">
+            <em>Aviso:</em> No prestamos servicios de agencia de contratación directa ni gestión de cuentas particulares de clientes; somos un portal formativo e informativo independiente.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer-growth">
+    <div class="footer-growth-bottom">
+      &copy; 2026 GrowthMatrix Media.
+    </div>
+  </footer>
+
+  <script src="js/ads-config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

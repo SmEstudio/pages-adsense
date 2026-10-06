@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MercadoEstrategia | Dirección Comercial, Retail y Pricing Estratégico</title>
+  <meta name="description" content="Revista y consultorio de estrategia comercial, marketing mix de las 4 Ps, neuromarketing en retail, cálculo de punto de equilibrio y fijación de precios markup.">
+  <meta name="keywords" content="mercadeo, estrategia comercial, 4 ps del marketing, punto de equilibrio, fijacion de precios markup, neuromarketing, retail, gestion de marca">
+  <link rel="canonical" href="https://mercadoestrategia.com/">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='10' fill='%231c1917'/><text y='70' x='50' text-anchor='middle' font-family='serif' font-size='55' fill='%23b45309'>ME</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "MercadoEstrategia",
+    "url": "https://mercadoestrategia.com/",
+    "description": "Publicación editorial ejecutiva de dirección comercial, gestión de retail y formulación de estrategias de mercado.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "MercadoEstrategia Editorial",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://mercadoestrategia.com/favicon.ico"
+      }
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Cintillo Superior -->
+  <div class="top-edition-bar">
+    Edición Ejecutiva &bull; Gestión de Marca, Retail &bull; Volumen 2026
+  </div>
+
+  <!-- Header -->
+  <header class="header-editorial">
+    <div class="navbar">
+      <div class="logo-area">
+        <a href="index.html" class="brand-title">Mercado<span>Estrategia</span></a>
+        <span class="brand-tagline">| Dirección Comercial</span>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Abrir navegación">&equiv;</button>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Portada</a></li>
+          <li><a href="#articulos">Ensayos & Artículos</a></li>
+          <li><a href="herramientas/index.html" class="btn-nav-editorial">Calculadoras de Precios</a></li>
+          <li><a href="sobre-nosotros.html">El Consejo</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-editorial">
+    <div class="container">
+      <span class="hero-cintillo">&mdash; Fundamentos Estratégicos de Mercado &mdash;</span>
+      <h1>La Ciencia de la Decisión Comercial y la <em>Rentabilidad de Marca</em></h1>
+      <p>
+        El éxito comercial sostenible no se improvisa con promociones esporádicas. Exige comprender la psicología del comprador, dominar la arquitectura de precios con precisión matemática y articular una propuesta de valor genuinamente diferenciada.
+      </p>
+      <div class="hero-actions">
+        <a href="herramientas/index.html" class="btn-editorial-primary">Calcular Punto de Equilibrio &rarr;</a>
+        <a href="#articulos" class="btn-editorial-secondary">Leer Análisis de Estrategia</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- AdSense Top Banner -->
+  <div class="container">
+    <div id="ad-top-ed" data-ad-slot="HEADER_BANNER" class="ad-slot-editorial"></div>
+  </div>
+
+  <!-- Calculadora Integrada en Inicio -->
+  <main class="container">
+    <section class="calc-editorial-card">
+      <div class="calc-editorial-header">
+        <span class="card-kicker">Módulo Financiero para Directores Comerciales</span>
+        <h3>Calculadora de Precios: Margen Bruto Real vs. Recargo (Markup)</h3>
+        <p style="color: var(--text-muted); font-size: 0.98rem; font-family: var(--font-serif);">
+          Uno de los errores más letales en retail y empresas de servicios es fijar precios aplicando un 40% de recargo al coste creyendo erróneamente que se obtendrá un margen de ganancia del 40%.
+        </p>
+      </div>
+
+      <form id="pricing-calc-form" class="calc-form-grid">
+        <div class="form-group-editorial">
+          <label for="calc-cost">Coste Total Unitario del Producto ($):</label>
+          <input type="number" id="calc-cost" value="45.00" min="1" step="0.5">
+        </div>
+        <div class="form-group-editorial">
+          <label for="calc-margin-target">Margen Bruto Deseado sobre Venta (%):</label>
+          <input type="number" id="calc-margin-target" value="40" min="5" max="95" step="1">
+        </div>
+      </form>
+
+      <div class="results-editorial-grid">
+        <div class="result-box-editorial">
+          <div class="r-label">Precio de Venta Final</div>
+          <div id="res-selling-price" class="r-value">$75.00</div>
+        </div>
+        <div class="result-box-editorial">
+          <div class="r-label">Beneficio Bruto por Unidad</div>
+          <div id="res-gross-profit" class="r-value gold">$30.00</div>
+        </div>
+        <div class="result-box-editorial">
+          <div class="r-label">Recargo Requerido (Markup)</div>
+          <div id="res-equiv-markup" class="r-value">66.7%</div>
+        </div>
+      </div>
+
+      <div style="margin-top: 1.5rem; background: var(--bg-editorial); border-left: 3px solid var(--gold); padding: 1rem 1.4rem; font-family: var(--font-serif); font-size: 0.95rem; color: var(--text-ink);">
+        <strong id="res-pricing-expl">Para obtener un margen bruto real del 40%, debes aplicar un Markup de recargo del 66.7% sobre tu coste de producción ($45.00).</strong>
+      </div>
+
+      <div style="text-align: right; margin-top: 1.2rem;">
+        <a href="herramientas/index.html" style="font-weight: 700; font-size: 0.9rem; text-transform: uppercase;">Ir al Simulador de Punto de Equilibrio (Break-Even) &rarr;</a>
+      </div>
+    </section>
+
+    <!-- Artículos y Ensayos -->
+    <section id="articulos">
+      <div class="section-headline">
+        <span>Publicaciones Recientes</span>
+        <h2>Ensayos de Estrategia Comercial & Retail</h2>
+      </div>
+
+      <div class="grid-editorial">
+        <!-- Ensayo 1 -->
+        <article class="card-editorial">
+          <div>
+            <span class="card-kicker">Marketing Mix</span>
+            <h3><a href="articulos/las-cuatro-ps-del-marketing-mix-moderno.html">El Marketing Mix Redefinido: De las 4 Ps Tradicionales a las 4 Cs en la Era Omnicanal</a></h3>
+            <p>
+              Revisión contemporánea del modelo de E. Jerome McCarthy y Philip Kotler. Cómo adaptar Producto, Precio, Plaza y Promoción a ecosistemas de compra híbridos e inmediatez logística.
+            </p>
+          </div>
+          <div class="card-byline">
+            <span>Lectura: 11 min</span>
+            <span>Por: Prof. Rodrigo Castillejo</span>
+          </div>
+        </article>
+
+        <!-- Ensayo 2 -->
+        <article class="card-editorial">
+          <div>
+            <span class="card-kicker">Economía Empresarial</span>
+            <h3><a href="articulos/como-calcular-el-punto-de-equilibrio-break-even.html">Cómo Calcular el Punto de Equilibrio Comercial: Fórmulas, Ejemplos y Sensibilidad</a></h3>
+            <p>
+              Análisis financiero del umbral de rentabilidad (Break-Even Point). Cómo determinar con certeza cuántas unidades debe despachar un comercio para absorber sus costes fijos de estructura.
+            </p>
+          </div>
+          <div class="card-byline">
+            <span>Lectura: 13 min</span>
+            <span>Por: Clara Montenegro, MBA</span>
+          </div>
+        </article>
+
+        <!-- Ensayo 3 -->
+        <article class="card-editorial">
+          <div>
+            <span class="card-kicker">Posicionamiento & Marca</span>
+            <h3><a href="articulos/estrategias-de-posicionamiento-de-marca-y-diferenciacion.html">Estrategias de Posicionamiento: Diferenciación según Porter y Mapas Perceptuales</a></h3>
+            <p>
+              Cómo escapar de la destructiva guerra de precios en retail mediante una propuesta de valor defensible. Metodología para diseñar mapas de percepción de mercado competitivos.
+            </p>
+          </div>
+          <div class="card-byline">
+            <span>Lectura: 12 min</span>
+            <span>Por: Prof. Rodrigo Castillejo</span>
+          </div>
+        </article>
+
+        <!-- Ensayo 4 -->
+        <article class="card-editorial">
+          <div>
+            <span class="card-kicker">Neuromarketing & Comportamiento</span>
+            <h3><a href="articulos/neuromarketing-y-psicologia-del-consumidor-en-retail.html">Neuromarketing y Psicología del Consumidor: Precios Psicológicos y Merchandising</a></h3>
+            <p>
+              El efecto señuelo (Decoy Effect), el anclaje de precios de Daniel Kahneman y el diseño del recorrido sensorial en el punto de venta para maximizar el ticket promedio del cliente.
+            </p>
+          </div>
+          <div class="card-byline">
+            <span>Lectura: 14 min</span>
+            <span>Por: Dra. Valeria Menéndez</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- AdSense Mid Content -->
+    <div id="ad-mid-ed" data-ad-slot="ARTICLE_INLINE" class="ad-slot-editorial"></div>
+
+    <!-- Preguntas Frecuentes Editoriales -->
+    <section class="faq-editorial-section">
+      <div class="section-headline">
+        <span>Consultorio Estratégico</span>
+        <h2>Preguntas Frecuentes de Dirección Comercial</h2>
+      </div>
+
+      <div class="faq-ed-item">
+        <div class="faq-ed-q">
+          <span>¿Por qué el margen bruto nunca puede superar el 100% mientras que el markup sí?</span>
+          <span>+</span>
+        </div>
+        <div class="faq-ed-a">
+          El margen bruto calcula la fracción de beneficio sobre el precio de venta final (\(\text{Beneficio} / \text{Precio de Venta}\)). Puesto que el coste siempre es mayor a cero, el beneficio nunca puede exceder el precio total cobrado (techo del 100%). En cambio, el Markup se divide entre el coste (\(\text{Beneficio} / \text{Coste}\)). Si compras por $10 y vendes por $50, tu ganancia es $40, lo que representa un Markup del 400% y un Margen Bruto del 80%.
+        </div>
+      </div>
+
+      <div class="faq-ed-item">
+        <div class="faq-ed-q">
+          <span>¿Cuál es el peligro de competir exclusivamente por precio bajo?</span>
+          <span>+</span>
+        </div>
+        <div class="faq-ed-a">
+          Como advertía Michael Porter, el liderazgo en costes exige economías de escala masivas que solo una o dos multinacionales pueden sostener en una industria. Las pymes que compiten en precio sin escala destruyen su margen operativo, merman la calidad del servicio y atraen al segmento de consumidores menos leales del mercado.
+        </div>
+      </div>
+
+      <div class="faq-ed-item">
+        <div class="faq-ed-q">
+          <span>¿Cómo impacta el "Efecto Señuelo" (Decoy Effect) en la carta de precios?</span>
+          <span>+</span>
+        </div>
+        <div class="faq-ed-a">
+          Al introducir una tercera opción asimétricamente dominada (un producto de precio similar al premium pero con características notablemente inferiores), el cerebro del consumidor percibe la opción premium como una oportunidad irresistible y multiplica su adopción hasta en un 40%.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Editorial -->
+  <footer class="footer-editorial">
+    <div class="footer-ed-grid">
+      <div class="footer-ed-col">
+        <h4>MercadoEstrategia</h4>
+        <p style="color: var(--text-muted); font-size: 0.92rem; font-family: var(--font-serif);">
+          Publicación de referencia dedicada al análisis de la gestión comercial, políticas de precios y psicología del consumidor en Iberoamérica.
+        </p>
+      </div>
+      <div class="footer-ed-col">
+        <h4>Herramientas</h4>
+        <ul>
+          <li><a href="herramientas/index.html">Calculadora de Markup vs Margen</a></li>
+          <li><a href="herramientas/index.html">Simulador de Punto de Equilibrio</a></li>
+          <li><a href="herramientas/index.html">Contribución Marginal en Retail</a></li>
+        </ul>
+      </div>
+      <div class="footer-ed-col">
+        <h4>Ensayos Destacados</h4>
+        <ul>
+          <li><a href="articulos/las-cuatro-ps-del-marketing-mix-moderno.html">Las 4 Ps del Marketing Mix</a></li>
+          <li><a href="articulos/como-calcular-el-punto-de-equilibrio-break-even.html">El Punto de Equilibrio</a></li>
+          <li><a href="articulos/estrategias-de-posicionamiento-de-marca-y-diferenciacion.html">Posicionamiento y Porter</a></li>
+          <li><a href="articulos/neuromarketing-y-psicologia-del-consumidor-en-retail.html">Neuromarketing en Retail</a></li>
+        </ul>
+      </div>
+      <div class="footer-ed-col">
+        <h4>Información Corporativa</h4>
+        <ul>
+          <li><a href="sobre-nosotros.html">El Consejo Editorial</a></li>
+          <li><a href="contacto.html">Contacto y Colaboraciones</a></li>
+          <li><a href="politica-de-privacidad.html">Política de Privacidad</a></li>
+          <li><a href="politica-de-cookies.html">Política de Cookies</a></li>
+          <li><a href="terminos-y-condiciones.html">Términos de Uso</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-ed-bottom">
+      &copy; 2026 MercadoEstrategia Editorial. Publicación Académica y Profesional Independiente.
+    </div>
+  </footer>
+
+  <!-- Banner Cookies RGPD -->
+  <div id="cookie-banner" class="cookie-banner-editorial">
+    <div class="cookie-box-editorial">
+      <div class="cookie-text-editorial">
+        MercadoEstrategia utiliza cookies técnicas y analíticas, así como cookies publicitarias de Google AdSense para asegurar la sostenibilidad de nuestras publicaciones gratuitas. Consulta nuestra <a href="politica-de-cookies.html">política de cookies</a> para más información.
+      </div>
+      <div style="display: flex; gap: 0.8rem;">
+        <button id="cookie-reject" class="btn-editorial-secondary" style="padding: 0.4rem 1rem; font-size: 0.8rem;">Solo Necesarias</button>
+        <button id="cookie-accept" class="btn-editorial-primary" style="padding: 0.4rem 1rem; font-size: 0.8rem;">Aceptar Cookies</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/ads-config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

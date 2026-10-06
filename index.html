@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Control - Portales Web Optimizados para Google AdSense</title>
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --success: #10b981;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 40px 20px;
+    }
+    .container { max-width: 1100px; margin: 0 auto; }
+    header { text-align: center; margin-bottom: 40px; }
+    .badge {
+      display: inline-block;
+      padding: 4px 14px;
+      background: #dbeafe;
+      color: #1e40af;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+    }
+    h1 { font-size: 2.4rem; font-weight: 800; color: #0f172a; margin-bottom: 10px; }
+    p.lead { font-size: 1.15rem; color: var(--text-muted); max-width: 760px; margin: 0 auto; }
+    
+    .grid-sites {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 25px;
+      margin-bottom: 45px;
+    }
+    .site-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 26px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.06);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .site-card:hover { transform: translateY(-4px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+    .site-icon { font-size: 2.2rem; margin-bottom: 12px; }
+    .site-card h2 { font-size: 1.35rem; margin-bottom: 8px; color: #0f172a; }
+    .site-niche { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 12px; }
+    .site-desc { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; flex-grow: 1; }
+    .features-list { list-style: none; margin-bottom: 20px; font-size: 0.88rem; color: #334155; }
+    .features-list li { margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
+    .btn-visit {
+      display: inline-block;
+      text-align: center;
+      padding: 12px;
+      border-radius: 8px;
+      font-weight: 700;
+      color: #ffffff;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .finanzen-card { 
+      border-top: 5px solid #047857; 
+      background: #ffffff;
+      box-shadow: 0 4px 16px rgba(4, 120, 87, 0.08);
+    }
+    .finanzen-card h2 { font-family: 'Georgia', serif; font-size: 1.5rem; color: #0f172a; }
+    .finanzen-card .site-niche { color: #047857; }
+    .finanzen-card .btn-visit { 
+      background: linear-gradient(135deg, #047857 0%, #065f46 100%); 
+      box-shadow: 0 4px 12px rgba(4, 120, 87, 0.25);
+    }
+    .finanzen-card .btn-visit:hover { background: #065f46; }
+
+    .nutrivital-card { 
+      border-top: 5px solid #0d9488; 
+      border-radius: 20px;
+      background: #ffffff;
+      box-shadow: 0 8px 24px rgba(13, 148, 136, 0.08);
+    }
+    .nutrivital-card h2 { font-size: 1.5rem; color: #134e4a; }
+    .nutrivital-card .site-niche { color: #0d9488; }
+    .nutrivital-card .btn-visit { 
+      background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%); 
+      border-radius: 9999px;
+      box-shadow: 0 4px 14px rgba(13, 148, 136, 0.25);
+    }
+    .nutrivital-card .btn-visit:hover { background: #0f766e; }
+
+    .techpulse-card { 
+      background: #0f172a; 
+      border: 1px solid #334155; 
+      border-top: 5px solid #6366f1; 
+      color: #f8fafc;
+      box-shadow: 0 10px 28px rgba(99, 102, 241, 0.18);
+    }
+    .techpulse-card h2 { font-size: 1.5rem; color: #ffffff; }
+    .techpulse-card .site-niche { color: #818cf8; font-family: monospace; }
+    .techpulse-card .site-desc { color: #94a3b8; }
+    .techpulse-card .features-list { color: #cbd5e1; }
+    .techpulse-card .btn-visit { 
+      background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%); 
+      box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
+    }
+    .techpulse-card .btn-visit:hover { background: #4338ca; }
+
+    .ecovatio-card { 
+      border-top: 5px solid #f59e0b; 
+      background: #ffffff;
+      box-shadow: 0 8px 24px rgba(245, 158, 11, 0.12);
+    }
+    .ecovatio-card h2 { font-size: 1.5rem; color: #1c1917; }
+    .ecovatio-card .site-niche { color: #d97706; }
+    .ecovatio-card .btn-visit { 
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); 
+      box-shadow: 0 4px 14px rgba(217, 119, 6, 0.3);
+    }
+    .ecovatio-card .btn-visit:hover { background: #b45309; }
+
+    .rutaaduana-card {
+      border-top: 5px solid #e65100;
+      background: #ffffff;
+      box-shadow: 0 6px 20px rgba(12, 35, 64, 0.1);
+    }
+    .rutaaduana-card h2 { font-size: 1.5rem; color: #0c2340; font-weight: 800; }
+    .rutaaduana-card .site-niche { color: #e65100; font-weight: 700; }
+    .rutaaduana-card .btn-visit {
+      background: linear-gradient(135deg, #0c2340 0%, #07172b 100%);
+      border: 1px solid #e65100;
+      box-shadow: 0 4px 12px rgba(230, 81, 0, 0.25);
+    }
+    .rutaaduana-card .btn-visit:hover { background: #e65100; color: #ffffff; }
+
+    .trademetrics-card {
+      background: #030712;
+      border: 1px solid #1f2937;
+      border-top: 5px solid #10b981;
+      color: #f8fafc;
+      box-shadow: 0 10px 28px rgba(16, 185, 129, 0.15);
+    }
+    .trademetrics-card h2 { font-size: 1.5rem; color: #ffffff; }
+    .trademetrics-card .site-niche { color: #34d399; font-family: monospace; }
+    .trademetrics-card .site-desc { color: #94a3b8; }
+    .trademetrics-card .features-list { color: #cbd5e1; }
+    .trademetrics-card .btn-visit {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      color: #030712;
+      font-weight: 800;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
+    }
+    .trademetrics-card .btn-visit:hover { background: #34d399; }
+
+    .growthmatrix-card {
+      border-top: 5px solid #4f46e5;
+      background: #ffffff;
+      box-shadow: 0 8px 24px rgba(79, 70, 229, 0.12);
+    }
+    .growthmatrix-card h2 { font-size: 1.5rem; color: #0f172a; }
+    .growthmatrix-card .site-niche { color: #4f46e5; font-weight: 700; }
+    .growthmatrix-card .btn-visit {
+      background: linear-gradient(135deg, #4f46e5 0%, #db2777 100%);
+      box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3);
+    }
+    .growthmatrix-card .btn-visit:hover { background: linear-gradient(135deg, #4338ca 0%, #be185d 100%); }
+
+    .mercadoestrategia-card {
+      background: #fdfbf7;
+      border: 1px solid #e7e0d8;
+      border-top: 5px solid #881337;
+      box-shadow: 0 8px 24px rgba(136, 19, 55, 0.1);
+    }
+    .mercadoestrategia-card h2 { font-family: 'Georgia', serif; font-size: 1.5rem; color: #4c0519; }
+    .mercadoestrategia-card .site-niche { color: #881337; font-weight: 700; }
+    .mercadoestrategia-card .btn-visit {
+      background: linear-gradient(135deg, #881337 0%, #4c0519 100%);
+      box-shadow: 0 4px 14px rgba(136, 19, 55, 0.3);
+    }
+    .mercadoestrategia-card .btn-visit:hover { background: #4c0519; }
+
+    .checklist-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 30px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.06);
+      margin-bottom: 40px;
+    }
+    .checklist-title { font-size: 1.5rem; font-weight: 800; margin-bottom: 18px; display: flex; align-items: center; gap: 8px; }
+    .checklist-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+    .check-item { display: flex; align-items: flex-start; gap: 10px; font-size: 0.92rem; color: #334155; }
+    .check-item span.icon { color: var(--success); font-weight: 800; font-size: 1.1rem; }
+
+    .steps-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 14px;
+      padding: 30px;
+    }
+    .steps-box h3 { color: #1e3a8a; margin-bottom: 14px; }
+    .steps-box ol { padding-left: 20px; color: #1e40af; font-size: 0.95rem; }
+    .steps-box li { margin-bottom: 10px; }
+    code { background: #dbeafe; padding: 2px 6px; border-radius: 4px; font-family: monospace; font-size: 0.9em; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <span class="badge">Ecosistema AdSense Listo para Publicar</span>
+      <h1>Portales Web Optimizados para Google AdSense</h1>
+      <p class="lead">
+        Se han creado 8 páginas webs completas, independientes y funcionales con contenido de alto valor (E-E-A-T), herramientas interactivas, diseño visual 100% único para cada portal, páginas legales obligatorias y contenedores de publicidad compatibles con las políticas de Google.
+      </p>
+    </header>
+
+    <!-- Cuadrícula de Páginas Web -->
+    <div class="grid-sites">
+      
+      <!-- Sitio 1 -->
+      <div class="site-card finanzen-card">
+        <div class="site-icon">📈</div>
+        <h2>FinanZen</h2>
+        <div class="site-niche">Nicho: Finanzas Personales & Inversión (Alto CPC: $2 - $15)</div>
+        <p class="site-desc">Portal enfocado en la libertad financiera, el interés compuesto, fondos indexados, pensiones, deudas y ahorro doméstico.</p>
+        <ul class="features-list">
+          <li>✓ <strong>Calculadora de Interés Compuesto</strong> con proyección gráfica Canvas</li>
+          <li>✓ <strong>Calculadora de Regla 50/30/20</strong></li>
+          <li>✓ <strong>Simulador de Cuota de Hipoteca y Préstamo</strong></li>
+          <li>✓ <strong>Test Interactivo de Salud Financiera</strong> (Puntuación 0-100)</li>
+          <li>✓ <strong>12 Artículos Exhaustivos</strong> con Infografías Vectoriales SVG</li>
+          <li>✓ Barra de lectura, Acordeón FAQ y Boletín Newsletter</li>
+        </ul>
+        <a href="site1-finanzas/index.html" class="btn-visit">Abrir Sitio FinanZen &rarr;</a>
+      </div>
+
+      <!-- Sitio 2 -->
+      <div class="site-card nutrivital-card">
+        <div class="site-icon">🥗</div>
+        <h2>NutriVital</h2>
+        <div class="site-niche">Nicho: Salud, Nutrición & Bienestar (Alto Tráfico: $0.80 - $4)</div>
+        <p class="site-desc">Portal de nutrición científica, déficit calórico, hipertrofia muscular, dieta mediterránea, sueño y suplementación.</p>
+        <ul class="features-list">
+          <li>✓ <strong>Calculadora TDEE y TMB</strong> (Mifflin-St Jeor en tiempo real)</li>
+          <li>✓ <strong>Calculadora de IMC</strong> con rangos de diagnóstico de la OMS</li>
+          <li>✓ <strong>Calculadora de Ingesta Diaria de Agua</strong></li>
+          <li>✓ <strong>Calculadora de Requerimiento Proteico Diario</strong></li>
+          <li>✓ <strong>13 Artículos Científicos</strong> con Descargos Médicos E-E-A-T</li>
+          <li>✓ Diagramas SVG, Acordeón FAQ y Boletín de Nutrición</li>
+        </ul>
+        <a href="site2-salud/index.html" class="btn-visit">Abrir Sitio NutriVital &rarr;</a>
+      </div>
+
+      <!-- Sitio 3 -->
+      <div class="site-card techpulse-card">
+        <div class="site-icon">🛡️</div>
+        <h2>BytePulse</h2>
+        <div class="site-niche">Nicho: Ciberseguridad, Redes & Dev Tools (Alto RPM: $1.50 - $9)</div>
+        <p class="site-desc">Portal técnico de seguridad digital, gestión de contraseñas, copias 3-2-1, DNS DoH, hosting, Docker y herramientas criptográficas locales.</p>
+        <ul class="features-list">
+          <li>✓ <strong>Generador Criptográfico de Contraseñas</strong> con entropía Shannon</li>
+          <li>✓ <strong>Calculadora de Tiempo de Descarga y Ancho de Banda</strong></li>
+          <li>✓ <strong>Conversor de Unidades Digitales (Bytes, KB, MB, GB, TB)</strong></li>
+          <li>✓ <strong>16 Artículos Técnicos</strong> con tutoriales paso a paso</li>
+          <li>✓ Cero telemetría externa (100% ejecutado en navegador local)</li>
+          <li>✓ Barra de lectura y esquema completo Schema.org</li>
+        </ul>
+        <a href="site3-tecnologia/index.html" class="btn-visit">Abrir Sitio BytePulse &rarr;</a>
+      </div>
+
+      <!-- Sitio 4 -->
+      <div class="site-card ecovatio-card">
+        <div class="site-icon">☀️</div>
+        <h2>EcoVatio</h2>
+        <div class="site-niche">Nicho: Energía Solar, Aerotermia & Eficiencia (Máximo CPC: $2.50 - $12)</div>
+        <p class="site-desc">Portal divulgativo de transición energética en el hogar, dimensionamiento de placas solares fotovoltaicas y optimización de facturas eléctricas.</p>
+        <ul class="features-list">
+          <li>✓ <strong>Calculadora de Autoconsumo Fotovoltaico y Retorno (ROI)</strong></li>
+          <li>✓ <strong>Calculadora de Consumo de Electrodomésticos en kWh y €</strong></li>
+          <li>✓ <strong>Comparador Técnico: Aerotermia vs Caldera de Gas</strong></li>
+          <li>✓ <strong>12 Guías Exhaustivas</strong> de solar, baterías LiFePO4, wallbox, aerotermia y autoconsumo colectivo</li>
+          <li>✓ Cumplimiento estricto de directivas europeas de eficiencia (EPBD)</li>
+          <li>✓ 100% listo para revisión en Google AdSense</li>
+        </ul>
+        <a href="site4-energia/index.html" class="btn-visit">Abrir Sitio EcoVatio &rarr;</a>
+      </div>
+
+      <!-- Sitio 5 -->
+      <div class="site-card rutaaduana-card">
+        <div class="site-icon">🚢</div>
+        <h2>RutaAduana</h2>
+        <div class="site-niche">Nicho: Importaciones China & Logística (Alto CPC: $2.00 - $8.50)</div>
+        <p class="site-desc">Portal de comercio internacional, importación directa desde fábricas en Alibaba/1688, Incoterms 2020 y aranceles de aduana.</p>
+        <ul class="features-list">
+          <li>✓ <strong>Calculadora de Aranceles, IVA y Coste de Importación (Landed Cost)</strong></li>
+          <li>✓ <strong>Calculadora de Volumen CBM y Flete de Contenedores</strong></li>
+          <li>✓ <strong>4 Guías Prácticas de Aduanas</strong> y códigos arancelarios HS</li>
+          <li>✓ Auditoría de proveedores chinos y prevención de estafas</li>
+          <li>✓ Estética marítima / portuaria industrial con marcado Schema.org</li>
+        </ul>
+        <a href="site5-importaciones/index.html" class="btn-visit">Abrir Sitio RutaAduana &rarr;</a>
+      </div>
+
+      <!-- Sitio 6 -->
+      <div class="site-card trademetrics-card">
+        <div class="site-icon">📊</div>
+        <h2>TradeMetrics</h2>
+        <div class="site-niche">Nicho: Trading Cuantitativo & Gestión de Riesgo (Alto CPC: $3.00 - $14)</div>
+        <p class="site-desc">Laboratorio cuantitativo para operadores de mercados financieros: control de riesgo matemático, lotaje y mitigación de sesgos psicológicos.</p>
+        <ul class="features-list">
+          <li>✓ <strong>Calculadora de Tamaño de Lote y Riesgo</strong> en tiempo real</li>
+          <li>✓ <strong>Simulador de Esperanza Matemática</strong> y riesgo de ruina</li>
+          <li>✓ <strong>4 Artículos Científicos</strong> con análisis de Drawdown y Backtesting</li>
+          <li>✓ Terminal oscuro financiero con ticker en vivo y cero telemetría</li>
+          <li>✓ Descargos regulatorios de riesgo financiero estrictos (YMYL)</li>
+        </ul>
+        <a href="site6-trading/index.html" class="btn-visit">Abrir Sitio TradeMetrics &rarr;</a>
+      </div>
+
+      <!-- Sitio 7 -->
+      <div class="site-card growthmatrix-card">
+        <div class="site-icon">🚀</div>
+        <h2>GrowthMatrix</h2>
+        <div class="site-niche">Nicho: Performance Marketing & Growth SaaS (Alto CPC: $2.50 - $11)</div>
+        <p class="site-desc">Portal de analítica digital avanzada, unit economics, adquisición de clientes, optimización de campañas Google Ads / Meta Ads y SEO semántico.</p>
+        <ul class="features-list">
+          <li>✓ <strong>Calculadora de CAC y LTV</strong> (Unit Economics & Ratio LTV:CAC)</li>
+          <li>✓ <strong>Calculadora de ROAS y Punto de Equilibrio (Break-even)</strong></li>
+          <li>✓ <strong>Simulador de Embudo de Conversión (Funnels)</strong></li>
+          <li>✓ <strong>4 Guías Prácticas</strong> sobre SEO Semántico y Growth Loops</li>
+          <li>✓ Estética SaaS Growth UI con paleta Índigo & Fucsia y Schema.org</li>
+        </ul>
+        <a href="site7-marketing/index.html" class="btn-visit">Abrir Sitio GrowthMatrix &rarr;</a>
+      </div>
+
+      <!-- Sitio 8 -->
+      <div class="site-card mercadoestrategia-card">
+        <div class="site-icon">🏛️</div>
+        <h2>MercadoEstrategia</h2>
+        <div class="site-niche">Nicho: Estrategia Comercial, Retail & Pricing (Alto CPC: $2.20 - $10)</div>
+        <p class="site-desc">Revista ejecutiva de dirección comercial: fijación de precios, arquitectura de decisiones de compra, las 4 Ps y umbral de rentabilidad.</p>
+        <ul class="features-list">
+          <li>✓ <strong>Calculadora de Precios: Markup vs Margen Bruto Real</strong></li>
+          <li>✓ <strong>Calculadora de Punto de Equilibrio (Break-Even Point)</strong></li>
+          <li>✓ <strong>Simulador de Margen de Contribución</strong> unitario</li>
+          <li>✓ <strong>4 Ensayos Editoriales</strong> de Neuromarketing, Retail y Michael Porter</li>
+          <li>✓ Diseño editorial ejecutivo tipo Harvard Business Review en borgoña y crema</li>
+        </ul>
+        <a href="site8-mercadeo/index.html" class="btn-visit">Abrir Sitio MercadoEstrategia &rarr;</a>
+      </div>
+
+    </div>
+
+    <!-- Lista de Verificación AdSense -->
+    <div class="checklist-box">
+      <h3 class="checklist-title">✅ Lista de Requisitos de Google AdSense Cumplidos al 100%</h3>
+      <div class="checklist-grid">
+        <div class="check-item">
+          <span class="icon">✓</span>
+          <div><strong>Contenido de Alto Valor:</strong> Artículos originales extensos, explicados con rigor y libres de texto superficial.</div>
+        </div>
+        <div class="check-item">
+          <span class="icon">✓</span>
+          <div><strong>Herramientas Interactivas:</strong> Retención de usuario y tiempo en página muy alto gracias a calculadoras y utilidades funcionales.</div>
+        </div>
+        <div class="check-item">
+          <span class="icon">✓</span>
+          <div><strong>Páginas Legales Obligatorias:</strong> Política de Privacidad detallada con cláusulas específicas de Google AdSense y cookies DART.</div>
+        </div>
+        <div class="check-item">
+          <span class="icon">✓</span>
+          <div><strong>Transparencia y E-E-A-T:</strong> Páginas «Quiénes Somos» con autores, principios editoriales y políticas de neutralidad.</div>
+        </div>
+        <div class="check-item">
+          <span class="icon">✓</span>
+          <div><strong>Consentimiento de Cookies:</strong> Banner flotante compatible con RGPD y directiva ePrivacy con memoria en localStorage.</div>
+        </div>
+        <div class="check-item">
+          <span class="icon">✓</span>
+          <div><strong>Etiquetado Conforme a Políticas:</strong> Bloques publicitarios explícitamente etiquetados como «PUBLICIDAD» para evitar clics accidentales.</div>
+        </div>
+        <div class="check-item">
+          <span class="icon">✓</span>
+          <div><strong>SEO Técnico y Sitemaps:</strong> Marcado Schema.org JSON-LD (WebSite, Article), meta descripciones, canonicals, <code>robots.txt</code> y <code>sitemap.xml</code>.</div>
+        </div>
+        <div class="check-item">
+          <span class="icon">✓</span>
+          <div><strong>Diseño Responsivo y Veloz:</strong> Carga ultrarrápida sin dependencias pesadas, optimizado para móviles y escritorio.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Instrucciones de Publicación -->
+    <div class="steps-box">
+      <h3>🚀 Guía Rápida para Publicar y Conectar tu Cuenta de AdSense:</h3>
+      <ol>
+        <li><strong>Configura tu Publisher ID:</strong> Abre el archivo <code>js/ads-config.js</code> dentro de la carpeta del sitio que vayas a publicar. Cambia <code>client: "ca-pub-XXXXXXXXXXXXXXXX"</code> por tu ID real de AdSense y cambia <code>enabled: false</code> a <code>enabled: true</code>.</li>
+        <li><strong>Personaliza el dominio o correo si lo deseas:</strong> En el pie de página y páginas de contacto/legal puedes sustituir el correo por tu dirección personal.</li>
+        <li><strong>Sube los archivos a tu Hosting:</strong> Puedes subir cada carpeta directamente a tu servidor (cPanel, Nginx, Apache), o desplegarlos de forma 100% gratuita con soporte SSL en <strong>Cloudflare Pages, Netlify, Vercel o GitHub Pages</strong>.</li>
+        <li><strong>Solicita la revisión en AdSense:</strong> Añade la URL de tu sitio web en la consola de Google AdSense. El equipo de revisión verificará el contenido de calidad y la presencia de las políticas legales.</li>
+      </ol>
+    </div>
+
+  </div>
+
+</body>
+</html>

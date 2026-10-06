@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Markup, Margen Bruto y Punto de Equilibrio | MercadoEstrategia</title>
+  <meta name="description" content="Herramientas financieras y comerciales: calcula la fijación de precios correcta entre Markup y Margen Bruto, y determina el Punto de Equilibrio (Break-Even) mensual.">
+  <link rel="canonical" href="https://mercadoestrategia.com/herramientas/">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='10' fill='%231c1917'/><text y='70' x='50' text-anchor='middle' font-family='serif' font-size='55' fill='%23b45309'>ME</text></svg>">
+  <link rel="stylesheet" href="../css/style.css">
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Suite de Calculadoras de Pricing y Punto de Equilibrio MercadoEstrategia",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <div class="top-edition-bar">
+    Herramientas de Análisis Financiero y Comercial &bull; Volumen 2026
+  </div>
+
+  <header class="header-editorial">
+    <div class="navbar">
+      <div class="logo-area">
+        <a href="../index.html" class="brand-title">Mercado<span>Estrategia</span></a>
+        <span class="brand-tagline">| Dirección Comercial</span>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Abrir navegación">&equiv;</button>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="../index.html">Portada</a></li>
+          <li><a href="../index.html#articulos">Ensayos</a></li>
+          <li><a href="index.html" class="active btn-nav-editorial">Calculadoras</a></li>
+          <li><a href="../sobre-nosotros.html">El Consejo</a></li>
+          <li><a href="../contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <nav style="font-size: 0.85rem; color: #78716c; margin-bottom: 1.5rem; font-family: var(--font-serif); font-style: italic;">
+      <a href="../index.html">Portada</a> &gt; <span>Instrumentos de Cálculo Comercial</span>
+    </nav>
+
+    <div class="article-header-editorial">
+      <span class="card-kicker">Modelos Cuantitativos para Gerentes</span>
+      <h1>Calculadoras Estratégicas de Precios y Umbral de Rentabilidad</h1>
+      <p style="color: var(--text-muted); font-size: 1.2rem; font-family: var(--font-serif);">
+        Fija precios de venta comercialmente competitivos y calcula con certeza el volumen mínimo de ventas requerido para absorber los costes fijos de tu estructura operativa.
+      </p>
+    </div>
+
+    <!-- AdSense Top Slot -->
+    <div id="ad-tool-ed-top" data-ad-slot="HEADER_BANNER" class="ad-slot-editorial"></div>
+
+    <!-- Herramienta 1: Markup vs Margen Bruto -->
+    <section class="calc-editorial-card">
+      <div class="calc-editorial-header">
+        <span class="card-kicker">Módulo 1</span>
+        <h3>1. Calculadora de Fijación de Precios: Margen Bruto vs. Markup</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem; font-family: var(--font-serif);">
+          Calcula el precio de catálogo necesario para asegurar tu margen de utilidad deseado, eliminando la clásica confusión contable entre margen comercial y recargo.
+        </p>
+      </div>
+
+      <form id="pricing-calc-form" class="calc-form-grid">
+        <div class="form-group-editorial">
+          <label for="calc-cost">Coste Unitario de Adquisición o Producción ($):</label>
+          <input type="number" id="calc-cost" value="60.00" min="1" step="1">
+        </div>
+        <div class="form-group-editorial">
+          <label for="calc-margin-target">Margen Bruto Deseado sobre la Venta (%):</label>
+          <input type="number" id="calc-margin-target" value="45" min="5" max="95" step="1">
+        </div>
+      </form>
+
+      <div class="results-editorial-grid">
+        <div class="result-box-editorial">
+          <div class="r-label">Precio de Venta Sugerido</div>
+          <div id="res-selling-price" class="r-value">$109.09</div>
+        </div>
+        <div class="result-box-editorial">
+          <div class="r-label">Beneficio Bruto Unitario</div>
+          <div id="res-gross-profit" class="r-value gold">$49.09</div>
+        </div>
+        <div class="result-box-editorial">
+          <div class="r-label">Markup Equivalente Aplicado</div>
+          <div id="res-equiv-markup" class="r-value">81.8%</div>
+        </div>
+      </div>
+
+      <div style="margin-top: 1.5rem; background: var(--bg-editorial); border-left: 3px solid var(--gold); padding: 1rem 1.4rem; font-family: var(--font-serif); font-size: 0.95rem; color: var(--text-ink);">
+        <strong id="res-pricing-expl">Para obtener un margen bruto real del 45%, debes aplicar un Markup de recargo del 81.8% sobre tu coste de producción ($60.00).</strong>
+      </div>
+    </section>
+
+    <!-- Herramienta 2: Punto de Equilibrio Comercial -->
+    <section class="calc-editorial-card">
+      <div class="calc-editorial-header">
+        <span class="card-kicker">Módulo 2</span>
+        <h3>2. Calculadora de Punto de Equilibrio (Break-Even Point)</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem; font-family: var(--font-serif);">
+          Determina con exactitud matemática cuántas unidades debes vender al mes para que tus ingresos igualen la suma total de tus costes fijos y variables.
+        </p>
+      </div>
+
+      <form id="breakeven-calc-form" class="calc-form-grid">
+        <div class="form-group-editorial">
+          <label for="be-fixed-costs">Costes Fijos Mensuales de Estructura ($):</label>
+          <input type="number" id="be-fixed-costs" value="8500" min="100" step="500">
+        </div>
+        <div class="form-group-editorial">
+          <label for="be-var-cost">Coste Variable Directo por Unidad ($):</label>
+          <input type="number" id="be-var-cost" value="35.00" min="1" step="1">
+        </div>
+        <div class="form-group-editorial">
+          <label for="be-unit-price">Precio de Venta al Público Unitario ($):</label>
+          <input type="number" id="be-unit-price" value="85.00" min="2" step="1">
+        </div>
+      </form>
+
+      <div class="results-editorial-grid">
+        <div class="result-box-editorial">
+          <div class="r-label">Unidades Umbral de Venta</div>
+          <div id="be-res-units" class="r-value">170 uds.</div>
+        </div>
+        <div class="result-box-editorial">
+          <div class="r-label">Facturación Mínima Mensual</div>
+          <div id="be-res-revenue" class="r-value gold">$14,450.00</div>
+        </div>
+        <div class="result-box-editorial">
+          <div class="r-label">Margen de Contribución Unitario</div>
+          <div id="be-res-contrib" class="r-value" style="font-size: 1.4rem;">$50.00 / ud.</div>
+        </div>
+        <div class="result-box-editorial">
+          <div class="r-label">Ratio de Margen de Contribución</div>
+          <div id="be-res-ratio" class="r-value" style="font-size: 1.4rem;">58.8%</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tratado E-E-A-T Metodológico -->
+    <article class="article-content-editorial">
+      <h2>Diferencias Teóricas Fundamentales entre Margen y Markup</h2>
+      <p class="dropcap">
+        La fijación inadecuada de precios es la principal causa no visible de insolvencia en empresas minoristas y distribuidoras. A menudo, un comerciante adquiere un artículo por $100 y, deseando obtener una ganancia del 30%, lo etiqueta en $130 (un Markup del 30%). Sin embargo, al finalizar el ejercicio fiscal, el contable le informa que su margen bruto ha sido de apenas el 23.07% (\(\$30 / \$130\)), provocando un déficit imprevisto para cubrir los costes de alquiler y salarios.
+      </p>
+
+      <div class="pull-quote">
+        "El Markup mira hacia el pasado: toma como referencia lo que te costó producir el bien. El Margen Bruto mira hacia el futuro: toma como referencia el dinero real que entra en la caja registradora tras la venta."
+      </div>
+
+      <div class="table-editorial-wrap">
+        <table class="table-editorial">
+          <thead>
+            <tr>
+              <th>Margen Bruto Deseado sobre Venta</th>
+              <th>Markup Requerido sobre Coste</th>
+              <th>Multiplicador sobre Coste</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>10%</td>
+              <td>11.1%</td>
+              <td>&times; 1.11</td>
+            </tr>
+            <tr>
+              <td>20%</td>
+              <td>25.0%</td>
+              <td>&times; 1.25</td>
+            </tr>
+            <tr>
+              <td>33.3%</td>
+              <td>50.0%</td>
+              <td>&times; 1.50</td>
+            </tr>
+            <tr>
+              <td>50.0% (Estándar Keystoning en Retail)</td>
+              <td>100.0%</td>
+              <td>&times; 2.00</td>
+            </tr>
+            <tr>
+              <td>60.0%</td>
+              <td>150.0%</td>
+              <td>&times; 2.50</td>
+            </tr>
+            <tr>
+              <td>75.0% (Artículos de Lujo / Software)</td>
+              <td>300.0%</td>
+              <td>&times; 4.00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>La Utilidad Estratégica del Margen de Contribución</h2>
+      <p>
+        El <strong>Margen de Contribución</strong> (\(\text{Precio Unitario} - \text{Coste Variable}\)) mide cuánto dinero aporta cada venta individual para 'contribuir' a liquidar los gastos fijos de la compañía (nóminas de administración, amortizaciones, alquileres). Una vez que la unidad número 170 (en nuestro ejemplo de simulación) se vende, la totalidad de los costes fijos quedan saldados: a partir de la unidad 171, cada venta deposita un 100% de su margen de contribución como <strong>beneficio neto operativo directo</strong> en la empresa.
+      </p>
+    </article>
+
+    <!-- AdSense Mid Slot -->
+    <div id="ad-tool-ed-bottom" data-ad-slot="ARTICLE_INLINE" class="ad-slot-editorial"></div>
+  </main>
+
+  <footer class="footer-editorial">
+    <div class="footer-ed-bottom">
+      &copy; 2026 MercadoEstrategia Editorial. Publicación Académica y Profesional.
+    </div>
+  </footer>
+
+  <script src="../js/ads-config.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

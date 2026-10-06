@@ -1,0 +1,14 @@
+# Archivos de sistema operativo
+Thumbs.db
+desktop.ini
+.DS_Store
+*.tmp
+*.bak
+*.swp
+
+# Editores y entornos
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj

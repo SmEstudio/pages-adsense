@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de ROAS, ROI, CAC y LTV | Herramientas GrowthMatrix</title>
+  <meta name="description" content="Calculadora avanzada de métricas de adquisición digital: calcula ROAS, Break-even ROAS, CAC, LTV y modela la pérdida de conversión de tus embudos de ventas.">
+  <link rel="canonical" href="https://growthmatrix.pro/herramientas/">
+  <link rel="stylesheet" href="../css/style.css">
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Suite de Calculadoras de Marketing de Rendimiento GrowthMatrix",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <header class="header-growth">
+    <div class="navbar">
+      <div class="logo-area">
+        <div class="logo-icon">&Delta;</div>
+        <a href="../index.html" class="brand-text">Growth<span>Matrix</span></a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Abrir navegación">&equiv;</button>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="../index.html#articulos">Artículos & Playbooks</a></li>
+          <li><a href="index.html" class="active btn-cta-nav">Calculadora ROAS & LTV</a></li>
+          <li><a href="../sobre-nosotros.html">Sobre Nosotros</a></li>
+          <li><a href="../contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <nav style="font-size: 0.85rem; color: #64748b; margin-bottom: 1.5rem;">
+      <a href="../index.html">Inicio</a> &gt; <span>Herramientas de Performance</span>
+    </nav>
+
+    <div class="article-header-growth">
+      <span class="card-pill-tag">Herramientas Gratuitas de Analítica</span>
+      <h1>Calculadoras de Performance Marketing & Funnels</h1>
+      <p style="color: var(--text-muted); font-size: 1.15rem;">
+        Modela la rentabilidad neta de tus canales publicitarios y detecta los puntos de fuga de clientes en tu embudo de ventas.
+      </p>
+    </div>
+
+    <!-- AdSense Top Slot -->
+    <div id="ad-tool-growth-top" data-ad-slot="HEADER_BANNER" class="ad-slot-saas"></div>
+
+    <!-- Herramienta 1: ROAS y Unit Economics -->
+    <section class="calc-saas-card">
+      <div class="calc-saas-header">
+        <span class="card-pill-tag">Módulo 1</span>
+        <h3>1. Calculadora de ROAS, CAC y Rentabilidad Neta (ROI)</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">
+          Ingresa los datos de tus campañas en Meta Ads, Google Ads o TikTok Ads para calcular el rendimiento económico unitario.
+        </p>
+      </div>
+
+      <form id="growth-calc-form" class="calc-inputs-grid">
+        <div class="form-group-saas">
+          <label for="calc-spend">Inversión Publicitaria Total ($USD):</label>
+          <input type="number" id="calc-spend" value="5000" min="10" step="100">
+        </div>
+        <div class="form-group-saas">
+          <label for="calc-revenue">Facturación Total Atribuida ($USD):</label>
+          <input type="number" id="calc-revenue" value="22500" min="10" step="100">
+        </div>
+        <div class="form-group-saas">
+          <label for="calc-customers">Volumen de Nuevos Clientes:</label>
+          <input type="number" id="calc-customers" value="250" min="1" step="1">
+        </div>
+        <div class="form-group-saas">
+          <label for="calc-margin">Margen Bruto de Beneficio (%):</label>
+          <input type="number" id="calc-margin" value="60" min="5" max="95" step="1">
+        </div>
+        <div class="form-group-saas">
+          <label for="calc-aov">Valor Medio de Pedido / AOV ($):</label>
+          <input type="number" id="calc-aov" value="90" min="5" step="5">
+        </div>
+        <div class="form-group-saas">
+          <label for="calc-repeats">Compras Promedio por Cliente:</label>
+          <input type="number" id="calc-repeats" value="2.5" min="1" max="20" step="0.1">
+        </div>
+      </form>
+
+      <div class="results-metrics-grid">
+        <div class="metric-pill-card">
+          <div class="m-label">ROAS Bruto</div>
+          <div id="res-roas" class="m-value">4.50x</div>
+        </div>
+        <div class="metric-pill-card">
+          <div class="m-label">Break-even ROAS</div>
+          <div id="res-be-roas" class="m-value" style="color: #64748b;">1.67x</div>
+        </div>
+        <div class="metric-pill-card">
+          <div class="m-label">ROI Neto Publicitario</div>
+          <div id="res-roi" class="m-value success">+170.0%</div>
+        </div>
+        <div class="metric-pill-card">
+          <div class="m-label">CAC (Coste por Cliente)</div>
+          <div id="res-cac" class="m-value" style="color: #0f172a;">$20.00</div>
+        </div>
+        <div class="metric-pill-card">
+          <div class="m-label">LTV Neto Estimado</div>
+          <div id="res-ltv" class="m-value success">$135.00</div>
+        </div>
+        <div class="metric-pill-card">
+          <div class="m-label">Ratio LTV : CAC</div>
+          <div id="res-ratio" class="m-value">6.75 : 1</div>
+        </div>
+      </div>
+
+      <div id="res-diagnosis" class="metric-diagnosis-box">
+        <strong style="color: #10b981;">&check; Salud Financiera Excelente:</strong> Adquisición altamente rentable. Tienes margen para incrementar pujas o probar nuevas creatividades.
+      </div>
+    </section>
+
+    <!-- Herramienta 2: Embudo de Conversión (Funnel) -->
+    <section class="calc-saas-card">
+      <div class="calc-saas-header">
+        <span class="card-pill-tag">Módulo 2</span>
+        <h3>2. Simulador de Embudo de Conversión (Funnel Droprate)</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">
+          Modela el volumen de visitantes, leads y compradores a lo largo de cada paso de tu funnel.
+        </p>
+      </div>
+
+      <form id="funnel-calc-form" class="calc-inputs-grid">
+        <div class="form-group-saas">
+          <label for="funnel-impr">Impresiones de Anuncios:</label>
+          <input type="number" id="funnel-impr" value="100000" min="1000" step="5000">
+        </div>
+        <div class="form-group-saas">
+          <label for="funnel-ctr">CTR (Click Through Rate %):</label>
+          <input type="number" id="funnel-ctr" value="2.5" min="0.1" max="20" step="0.1">
+        </div>
+        <div class="form-group-saas">
+          <label for="funnel-lead-cr">Conversión a Lead / Registro (%):</label>
+          <input type="number" id="funnel-lead-cr" value="12.0" min="0.5" max="80" step="0.5">
+        </div>
+        <div class="form-group-saas">
+          <label for="funnel-sale-cr">Conversión de Lead a Cliente (%):</label>
+          <input type="number" id="funnel-sale-cr" value="8.0" min="0.1" max="50" step="0.5">
+        </div>
+        <div class="form-group-saas">
+          <label for="funnel-aov">Ticket Medio de Venta ($USD):</label>
+          <input type="number" id="funnel-aov" value="120" min="5" step="5">
+        </div>
+      </form>
+
+      <div class="results-metrics-grid">
+        <div class="metric-pill-card">
+          <div class="m-label">Clics a la Web</div>
+          <div id="funnel-res-clicks" class="m-value">2,500</div>
+        </div>
+        <div class="metric-pill-card">
+          <div class="m-label">Leads Generados</div>
+          <div id="funnel-res-leads" class="m-value" style="color: #6366f1;">300</div>
+        </div>
+        <div class="metric-pill-card">
+          <div class="m-label">Clientes Finales</div>
+          <div id="funnel-res-sales" class="m-value success">24</div>
+        </div>
+        <div class="metric-pill-card">
+          <div class="m-label">Ingresos Proyectados</div>
+          <div id="funnel-res-rev" class="m-value success">$2,880.00</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guía Metodológica E-E-A-T -->
+    <article class="article-content">
+      <h2>Cómo Interpretar tus Métricas de Performance</h2>
+      <p>
+        El error más recurrente de los equipos de marketing digital es celebrar un ROAS elevado sin contrastarlo contra el coste unitario del producto. El <strong>Break-even ROAS</strong> (ROAS de equilibrio) representa el multiplicador exacto donde la empresa no gana ni pierde dinero:
+      </p>
+
+      <div class="callout-growth">
+        <div class="callout-growth-title">Fórmula del Break-even ROAS</div>
+        <p><code>Break-Even ROAS = 1 / Margen Bruto Porcentual</code></p>
+        <p style="font-size: 0.9rem; color: #64748b; margin-top: 0.5rem;">
+          Si vendes con un margen bruto del 40%, tu ROAS mínimo para cubrir costes de producto y anuncios es \(1 / 0.40 = 2.5x\). Cualquier campaña por debajo de 2.5x te está costando dinero real, a pesar de reportar ventas.
+        </p>
+      </div>
+
+      <h3>Diferenciación entre Blended CAC y Paid CAC</h3>
+      <p>
+        El <strong>Paid CAC</strong> mide únicamente los clientes generados directamente por campañas de pago frente al gasto en paid media. Por el contrario, el <strong>Blended CAC</strong> computa todos los clientes nuevos (incluyendo tráfico orgánico, referidos y boca a boca) divididos entre el gasto publicitario total.
+      </p>
+      <p>
+        Para tomar decisiones de escalado en plataformas como Meta o Google Ads, debes basarte en el Paid CAC para evitar que el tráfico de marca orgánico distorsione falsamente la eficiencia de tus campañas de prospección en frío.
+      </p>
+    </article>
+
+    <!-- AdSense Mid Slot -->
+    <div id="ad-tool-growth-bottom" data-ad-slot="ARTICLE_INLINE" class="ad-slot-saas"></div>
+  </main>
+
+  <footer class="footer-growth">
+    <div class="footer-growth-bottom">
+      &copy; 2026 GrowthMatrix Media.
+    </div>
+  </footer>
+
+  <script src="../js/ads-config.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
